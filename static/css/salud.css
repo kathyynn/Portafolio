@@ -95,3 +95,10 @@ h2, h3 {
     color: #5f4b32; /* Color de texto beige oscuro para títulos */
     margin-bottom: 20px;
 }
+
+header {
+    background-color: #d4a373;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}

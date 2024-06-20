@@ -1,0 +1,80 @@
+/* Estilos para la sección "Quiénes Somos" */
+
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+
+.navbar {
+    background-color: #fff;
+    /* Fondo blanco para la barra de navegación */
+    border-bottom: 1px solid #e3e3e3;
+    /* Borde inferior sutil */
+}
+
+.nav-link {
+    color: #7f6d4e !important;
+    /* Color beige medio para enlaces de navegación */
+}
+
+.nav-link:hover {
+    color: #5f4b32 !important;
+    /* Color beige oscuro al pasar el ratón */
+}
+
+.btn-primary {
+    background-color: #d4a373;
+    /* Color beige más oscuro para botones primarios */
+    border-color: #d4a373;
+}
+
+.btn-primary:hover {
+    background-color: #b68c62;
+    /* Color más oscuro al pasar el ratón */
+    border-color: #b68c62;
+}
+
+.btn-outline-primary {
+    color: #d4a373;
+    /* Color beige oscuro para botones outline */
+    border-color: #d4a373;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d4a373;
+    color: #fff;
+}
+
+.about-image {
+    margin-bottom: 20px;
+}
+
+.about-text {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.about-text h3 {
+    color: #5f4b32;
+    /* Color de texto beige oscuro */
+    margin-top: 20px;
+}
+
+.about-text p {
+    color: #7f6d4e;
+    /* Color de texto beige medio */
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #f9f6f1;
+    /* Fondo beige claro */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
