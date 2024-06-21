@@ -48,49 +48,10 @@
 
 
     <div class="container mt-4">
-        <div class="row g-4">
-            {% for producto in productos %}
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="{{ producto.url_imagen }}" alt="" class="card-img-top" style="height: 280px;">
-                    <div class="card-body">
-                        <h4>{{ producto.nombre }}</h4>
-                        <li>Precio:${{producto.precio}}</li>
-                        <li>{{producto.descripcion}}</li>
-                        {% csrf_token %}
-                        <button class="btn btn-primary" onclick="agregarAlCarrito('{{producto.id}}-{{ producto.nombre }}-{{producto.precio}}-{{producto.descripcion}}-{{producto.url_imagen}}')">Añadir al Carrito</button>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <p>No hay productos disponibles.</p>
-            {% endfor %}
-
-            <!--
-            <div class="col d-print-inline-flex col-xs-12">
-                <div class="card">
-                    <img src="/static/img/carcasa1.jpg" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Carcasa Colo-Colo Iphone SE </h5>
-                        <li>Precio:$5.000</li>
-                        <li>Oferta:$4.390</li>
-                        <button type="button" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col d-print-inline-flex col-xs-12">
-                <div class="card">
-                    <img src="/static/img/pcgamer1.jpg" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <h5>HP Pavilion Gaming</h5>
-                        <li>Precio:$995.000</li>
-                        <li>Oferta:$665.000</li>
-                        <button type="button" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>-->
-        </div>
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito">
+            <!-- Items del carrito se mostrarán aquí -->
+        </ul>
     </div>
 
 
@@ -101,19 +62,42 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function agregarAlCarrito(producto) {
-            let list = producto.split("-")
-            let objeto = {
-                id: list[0],
-                nombre: list[1],
-                precio: list[2],
-                descripcion: list[3],
-                url_imagen: list[4]
-            }
+        function mostrarCarrito() {
             let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push(objeto);
-            localStorage.setItem('carrito', JSON.stringify(carrito));
+            let carritoElement = document.getElementById('carrito');
+            carritoElement.innerHTML = '';
+
+            carrito.forEach(item => {
+                // Crear tarjeta (card)
+                let card = document.createElement('div');
+                card.classList.add('card', 'mb-3'); // Añadir clases de Bootstrap (card y margen inferior)
+
+                // Crear contenido de la tarjeta
+                let cardContent = `
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${item.url_imagen}" class="img-fluid rounded-start" alt="${item.nombre}" style="width: 250px">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.nombre}</h5>
+                            <p class="card-text">${item.descripcion}</p>
+                            <p class="card-text"><strong>Precio:</strong> $${item.precio}</p>
+                            <p class="card-text"><strong>ID:</strong> ${item.id}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                // Insertar contenido en la tarjeta
+                card.innerHTML = cardContent;
+
+                // Añadir tarjeta al contenedor de carrito
+                carritoElement.appendChild(card);
+            });
         }
+
+        document.addEventListener('DOMContentLoaded', mostrarCarrito);
     </script>
 </body>
 

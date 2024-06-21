@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from PortafolioApp.models import Producto
+
 # Create your views here.
 
 def renderHome(request):
@@ -15,7 +17,9 @@ def renderEncuestas(request):
     return render(request, 'PortafolioApp/encuestas.html')
 
 def renderProductos(request):
-    return render(request, 'PortafolioApp/productos.html')
+    productos = Producto.objects.using('portafolio').all()  # Obtener todos los productos desde productos_db
+    #print(productos)  # Esto imprimirá la lista de productos en la consola donde se está ejecutando tu servidor
+    return render(request, 'PortafolioApp/productos.html', {'productos': productos})
 
 def renderContacto(request):
     return render(request, 'PortafolioApp/contacto.html')
@@ -46,3 +50,6 @@ def renderCoaniquem(request):
 
 def renderDiscapacitados(request):
     return render(request, 'PortafolioApp/Discapacitados.html')
+
+def renderCarrito(request):
+    return render(request, 'PortafolioApp/carrito.html')

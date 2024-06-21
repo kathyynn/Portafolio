@@ -81,8 +81,15 @@ WSGI_APPLICATION = 'Portafolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'miBase',
-
+        'NAME': BASE_DIR / 'db.sqlite3',  # Base de datos predeterminada para usuarios
+    },
+    'portafolio': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portafolio',
+        'USER': 'root',
+        'PASSWORD': '',  # La contraseña que configuraste para MySQL
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
