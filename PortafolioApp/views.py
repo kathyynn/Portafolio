@@ -46,10 +46,10 @@ def renderCatastrofes(request):
     return render(request, 'PortafolioApp/catastrofes.html')
 
 def renderCoaniquem(request):
-    return render(request, 'PortafolioApp/Coaniquem.html')
+    return render(request, 'PortafolioApp/coaniquem.html')
 
 def renderDiscapacitados(request):
-    return render(request, 'PortafolioApp/Discapacitados.html')
+    return render(request, 'PortafolioApp/discapacitados.html')
 
 def renderCarrito(request):
     return render(request, 'PortafolioApp/carrito.html')
