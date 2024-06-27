@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from PortafolioApp.views import renderHome, renderLogin, renderRegister, renderEncuestas, renderProductos, renderCampanas, renderContacto, renderQuienes, renderFunciona, renderSalud, renderViviendas, renderDiscapacitados, renderCoaniquem, renderCatastrofes, renderAnimales, renderCarrito
+from PortafolioApp.views import renderHome, renderLogin, renderRegister, renderEncuestas, renderProductos, renderCampanas, renderContacto, renderQuienes, renderFunciona, renderSalud, renderEducacion, renderDiscapacitados, renderCoaniquem, renderCatastrofes, renderAnimales, renderCarrito
 
 urlpatterns = [
     path('', renderHome),
@@ -18,7 +18,7 @@ urlpatterns = [
     path('catastrofes', renderCatastrofes),
     path('coaniquem', renderCoaniquem),
     path('discapacitados', renderDiscapacitados),
-    path('viviendas', renderViviendas),
+    path('educacion', renderEducacion),
     path('carrito', renderCarrito)
 
 

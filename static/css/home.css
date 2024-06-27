@@ -53,6 +53,7 @@ body {
 .card {
     border: 1px solid #e3e3e3; /* Borde sutil para las tarjetas */
     border-radius: 8px; /* Bordes redondeados */
+    width: 400px;
 }
 
 .card-title {
@@ -62,6 +63,7 @@ body {
 .card-text {
     color: #7f6d4e; /* Color de texto beige medio para el contenido de las tarjetas */
 }
+
 
 footer {
     background-color: #fff; /* Fondo blanco para el pie de página */

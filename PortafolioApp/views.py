@@ -8,7 +8,7 @@ def renderHome(request):
     return render(request, 'PortafolioApp/home.html')
 
 def renderLogin(request):
-    return render(request, 'PortafolioApp/login.html')
+    return render(request, 'PortafolioApp/nuevologin.html')
 
 def renderRegister(request):
     return render(request, 'PortafolioApp/register.html')
@@ -36,8 +36,8 @@ def renderFunciona(request):
 def renderSalud(request):
     return render(request, 'PortafolioApp/salud.html')
 
-def renderViviendas(request):
-    return render(request, 'PortafolioApp/viviendas.html')
+def renderEducacion(request):
+    return render(request, 'PortafolioApp/educacion.html')
 
 def renderAnimales(request):
     return render(request, 'PortafolioApp/animales.html')
